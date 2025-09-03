@@ -1,0 +1,8 @@
+FROM mariadb:latest
+
+ENV MYSQL_ROOT_PASSWORD=icesi2023
+ENV MYSQL_DATABASE=Market
+ENV MYSQL_USER=sbarona
+ENV MYSQL_PASSWORD=password
+
+COPY init.sql /docker-entrypoint-initdb.d/
