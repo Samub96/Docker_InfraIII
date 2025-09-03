@@ -1,1 +1,13 @@
-FROM alpine:latest
+FROM debian:latest
+
+# Instalar Apache
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
+
+# Copiar el archivo HTML a la ruta por defecto
+COPY index.html /var/www/html/index.html
+
+# Exponer el puerto
+EXPOSE 80
+
+# Comando de inicio
+CMD ["apachectl", "-D", "FOREGROUND"]

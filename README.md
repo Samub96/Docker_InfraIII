@@ -4,8 +4,7 @@
 
    ## Introducción
 
-   En el presente informe documenta la implementacion y despliegue de distintos contenedores, se implementará una base de datos con mariaDB garantizando que esta sea persistente (si se borra el contenedor mantenga la info almacenada), un contenedor un web  apache y finalmente la publicacion de este servicio en un repositorio publico (DockerHub, Quay, etc).
-
+En el presente informe se documenta la implementación y despliegue de distintos contenedores utilizando Docker. Se configuró una base de datos con MariaDB, garantizando la persistencia de los datos; un contenedor con un servidor Apache para servir páginas web básicas; y finalmente la publicación de estas imágenes en un repositorio público (DockerHub, Quay, etc.).
    ## Objetivos
 
       - Crear un contenedor con una base de datos de mariaDB 
@@ -13,16 +12,72 @@
       - Publicacion del contenedor en cualquier repositorio
 
    ## Desarrollo de la Actividad
+
+   ### Estructura de los directorios
+
+```
+
+├── 📁 src/
+│   ├── 📁 docker/
+│   │   ├── 📁 db/
+│   │   │   ├── 🐳 dockerfile
+│   │   │   └── 🗄️ init.sql
+│   │   └── 📁 web/
+|   |       ├── 🌐 index.html
+│   │       └── 🐳 dockerfile
+│   └── 📁 pics/  <-- Fotos de ejecucion -->
+└── 📖 README.md
+
+```
+
 ### Creacion del contenedor web apache 
+```
+└── 📁 web/
+    └── 🐳 dockerfile
+ ```
+
+### Creacion del contenedor MariaDB
+
+Especificaciones del contenedor 
+
+> - Nombre del contenedor: mysql-icesi
+>-  Usuario MySQL: (letra de su primer nombre y su apellido) ej, mcastillo
+>-  Password MySQL: mysql277
+>- Database: Market
+>- MySQL root password: icesi2023
+>- Tabla: products
+>- Agregue los siguientes campos a la tabla products: id int(12), name
+varchar(255), code varchar(255), Primary Key id.
+h. Inserte 4 filas de información en la tabla. 
+
+```
+├── 📁 db/
+│   ├── 🐳 dockerfile
+│   └── 🗄️ init.sql
+|
+```
+#### Construccion de la imagen 
+```
+docker build -t mysql-icesi-img .
+```
+### Creacion del contenedor web
+
+```
+📁 web/
+|   ├── 🐳 dockerfile
+|   └── 🌐 index.html
+```
+
+## Resultados
 
 
-   ### Configuración inicial
+## Conclusiones
+   - Docker facilita la creación y despliegue de servicios portables y replicables.
 
+- El uso de volúmenes garantiza la persistencia de datos en bases de datos.
 
-   ### Prueba inicial
+- Separar los servicios en distintos contenedores (BD y Web) permite mayor escalabilidad y mantenimiento.
 
-
-   ## Resultados
-   ## Conclusiones
+- Publicar las imágenes en un repositorio público permite colaboración y reutilización del trabajo.
    ## 👨‍💻 Autor 
 **SAMUEL BARONA - Estudiante ingenieria Telematica**
