@@ -138,8 +138,12 @@ Puerto 80 en el contenedor (donde Apache escucha por defecto).
 Es la imagen que se usa para crear el contenedor, en este caso una personalizada llamada apache-web.
 ## Resultados
 
+ ### Contenedores desplegados 
 
+ ![dockerps](/src/pics/dockerps.png)
 
+### Web desplegado
+![web](/src/pics/webdespl.png)
 
 ## Conclusiones
    - Docker facilita la creación y despliegue de servicios portables y replicables.
