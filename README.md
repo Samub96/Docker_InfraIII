@@ -145,6 +145,10 @@ Es la imagen que se usa para crear el contenedor, en este caso una personalizada
 ### Web desplegado
 ![web](/src/pics/webdespl.png)
 
+## SUbir a dockerhub
+![docker](/src/pics/dockerhub.png)
+![webs](/src/pics/dockerdespl.png)
+
 ## Conclusiones
    - Docker facilita la creación y despliegue de servicios portables y replicables.
 
